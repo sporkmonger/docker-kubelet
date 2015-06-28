@@ -2,7 +2,7 @@ FROM quay.io/sporkmonger/secure-bootstrap
 MAINTAINER Bob Aman <bob@sporkmonger.com>
 
 # Make sure liveness probes can operate on DNS
-RUN apk add --update bind-tools && rm -rf /var/cache/apk/*
+RUN apk add --update curl bind-tools && rm -rf /var/cache/apk/*
 
 RUN mkdir -p /opt/bin && mkdir -p /opt/kubernetes/manifests
 

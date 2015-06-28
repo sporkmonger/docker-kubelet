@@ -10,7 +10,7 @@ RUN mkdir -p /opt/bin && mkdir -p /opt/kubernetes/manifests
 
 ENV VERSION=v0.16.2
 
-RUN go get -d github.com/GoogleCloudPlatform/kubernetes && \
+RUN go get -d github.com/GoogleCloudPlatform/kubernetes/cmd/kubelet && \
   cd /go/src/github.com/GoogleCloudPlatform/kubernetes && \
   git checkout $VERSION && \
   ./hack/build-go.sh cmd/kubelet && \

@@ -15,7 +15,8 @@ RUN go get -d github.com/GoogleCloudPlatform/kubernetes/cmd/kubelet && \
   git checkout $VERSION && \
   ./hack/build-go.sh cmd/kubelet && \
   cp -p ./_output/local/bin/linux/amd64/kubelet /opt/bin/kubelet && \
-  rm -rf ./_output && \
-  cd -
+  cd - && \
+  rm -rf /go/src/* && \
+  rm -rf /go/pkg/*
 
 CMD [ "/opt/bin/kubelet" ]
